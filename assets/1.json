@@ -1,0 +1,20 @@
+{
+    "name": "Python",
+    "symbol": "",
+    "image": "1.png",
+    "properties": {
+      "files": [
+        {
+          "uri": "1.png",
+          "type": "image/png"
+        }
+      ],
+      "creators": [
+        {
+          "address": "9d2YX9Fm47vPEzgX46G8qE2sbbvVEujzNUwiEAd8KKwX",
+          "share": 100
+        }
+      ]
+    }
+  }
+  
