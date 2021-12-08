@@ -1,6 +1,8 @@
 .App {
   height: 100vh;
   background-color: rgb(20, 20, 20);
+  /* background: rgb(2,0,36); */
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(105,9,121,1) 27%, rgba(7,158,29,1) 47%, rgba(6,178,147,1) 58%, rgba(158,0,255,1) 100%);
   overflow: scroll;
   text-align: center;
   overflow: hidden;
