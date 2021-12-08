@@ -3,6 +3,11 @@
   flex-direction: column;
 }
 
+.machine-drop-date {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 .gif-container {
   display: flex;
   flex-direction: column;
