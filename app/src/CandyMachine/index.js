@@ -138,7 +138,7 @@ const CandyMachine = ({ walletAddress }) => {
 
         // get image URI
         if (!mints.find((mm) => mm.image === parse.image)) {
-          setMints((prevState) => [...prevState, {image: parse.image, name: mint.data.name}]);
+          setMints((prevState) => [...prevState, { image: parse.image, name: mint.data.name }]);
         }
       }
     }
@@ -332,16 +332,16 @@ const CandyMachine = ({ walletAddress }) => {
 
   const renderMintedItems = () => (
     <div className="gif-container">
-    <p className="sub-text">Minted Items ✨</p>
-    <div className="gif-grid">
-      {mints.map((mint) => (
-        <div className="gif-item" key={mint}>
-          <img src={mint.image} alt={`Minted NFT ${mint.image}`} />
-          <p>{mint.name}</p>
-        </div>
-      ))}
+      <p className="sub-text">Minted Items ✨</p>
+      <div className="gif-grid">
+        {mints.map((mint) => (
+          <div className="gif-item" key={mint}>
+            <img src={mint.image} alt={`Minted NFT ${mint.image}`} />
+            <p>{mint.name}</p>
+          </div>
+        ))}
+      </div>
     </div>
-  </div>
   );
 
   const renderDropTimer = () => {
@@ -350,7 +350,7 @@ const CandyMachine = ({ walletAddress }) => {
 
     if (currentDate < dropDate) {
       console.log("Before drop date!");
-      return <CountdownTimer dropDate={dropDate}/>;
+      return <CountdownTimer dropDate={dropDate} />;
     }
 
     return <p>{`Drop date: ${machineStats.goLiveDateTimeString}`}</p>;
@@ -364,15 +364,19 @@ const CandyMachine = ({ walletAddress }) => {
     // only show this if machineStats is available
     machineStats && (
       <div className="machine-container">
-        { renderDropTimer() }
+        {renderDropTimer()}
         <p className="machine-items-minted">{`Items Minted: ${machineStats.itemsRedeemed} / ${machineStats.itemsAvailable}`}</p>
-        <button className="cta-button mint-button" onClick={mintToken} disabled={isMinting}>
+        { machineStats.itemsRedeemed === machineStats.itemsAvailable ? (
+          <p className="sub-text">Sold out 🙊</p>
+        ): (
+            <button className = "cta-button mint-button" onClick = { mintToken } disabled = { isMinting }>
           Mint NFT
         </button>
-        {/* If we have mints available in our array, let's render some items */}
-        {isLoadingMints && <img className="gif-loading-mints" src="https://media.giphy.com/media/3y0oCOkdKKRi0/giphy.gif"/>}
-        {mints.length > 0 && renderMintedItems()}
-      </div>
+        )}
+        {/* If we have mints available in our array, let's render some items */ }
+        { isLoadingMints && <img className="gif-loading-mints" src="https://media.giphy.com/media/3y0oCOkdKKRi0/giphy.gif" /> }
+        { mints.length > 0 && renderMintedItems() }
+      </div >
     )
   );
 
