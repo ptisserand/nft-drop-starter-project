@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import twitterLogo from './assets/twitter-logo.svg';
+import githubLogo from './assets/github-logo.svg';
 import CandyMachine from './CandyMachine';
 
 // Constants
 const TWITTER_HANDLE = '_buildspace';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
+const GITHUB_LINK = 'https://github.com/ptisserand/nft-drop-starter-project';
 
 const App = () => {
 
@@ -69,7 +71,7 @@ const App = () => {
     <div className="App">
       <div className="container">
         <div className="header-container">
-          <p className="header">🍭 Candy Drop</p>
+          <p className="header">🍭 Language Drop</p>
           <p className="sub-text">NFT drop machine with fair mint</p>
           {/* To connect wallet */}
           {!walletAddress && renderNotConnectedContainer()}
@@ -82,7 +84,13 @@ const App = () => {
             href={TWITTER_LINK}
             target="_blank"
             rel="noreferrer"
-          >{`built on @${TWITTER_HANDLE}`}</a>
+          >{`built on @${TWITTER_HANDLE}`}</a>          
+          <a 
+            className="footer-text"
+            href={GITHUB_LINK}
+            target="_blank"
+            rel="noreferrer"
+          ><img alt="Github Logo" className="github-logo" src={githubLogo} /></a>
         </div>
       </div>
     </div>

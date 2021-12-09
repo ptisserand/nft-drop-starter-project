@@ -1,8 +1,7 @@
 .App {
   height: 100vh;
-  background-color: rgb(20, 20, 20);
-  /* background: rgb(2,0,36); */
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(105,9,121,1) 27%, rgba(7,158,29,1) 47%, rgba(6,178,147,1) 58%, rgba(158,0,255,1) 100%);
+  background-color: rgb(247, 239, 239);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(105,9,121,1) 27%, rgba(6,178,147,1) 58%, rgba(158,0,255,1) 100%);
   overflow: scroll;
   text-align: center;
   overflow: hidden;
@@ -67,7 +66,7 @@
 }
 
 .mint-button {
-  background: -webkit-linear-gradient(left, #4e44ce, #35aee2);
+  background: -webkit-linear-gradient(left, #5b597e, #b5d620);
   background-size: 200% 200%;
   animation: gradient-animation 4s ease infinite;
   margin-left: 10px;
@@ -87,6 +86,12 @@
 .twitter-logo {
   width: 35px;
   height: 35px;
+}
+
+.github-logo {
+  width: 30px;
+  height: 30px;
+  padding: 10px;
 }
 
 .footer-text {
